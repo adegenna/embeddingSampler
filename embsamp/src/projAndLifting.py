@@ -25,6 +25,16 @@ class ProjectionAndLiftingOperators( ABC ):
         map X_low from low dimn embedded space -> high dimn ambient space
         """
         pass
+    
+    @abstractmethod
+    def get_lifted_coordinates_list(self, X_low: List[ np.array ] ) -> List[ np.array ]:
+
+        """
+        use when you have a list of low-dimn coordinates rather than an array
+        maps to a list of high-dimn coordinates
+        """
+        pass
+
 
 
 @dataclass
@@ -49,6 +59,7 @@ class ProjectionAndLiftingOperators_Linear( ProjectionAndLiftingOperators ):
         """
         return list[ <np.array> ] , each list element is d-dimn, and there are D of them
         """
+        pass
 
 
 @dataclass
@@ -58,8 +69,11 @@ class RandomProjectionCompression( ProjectionAndLiftingOperators_Linear ):
     implementation for function compression with random gaussian matrices
     based on johnnson-lindenstrauss lemma
     
-    D : ambient space dimension
-    d : embedded space dimension
+    inputs:
+        D : ambient space dimension
+        d : embedded space dimension
+        type_random_proj : method used for random projection
+            options are [ 'JL' , 'hypersphere' ]
     """
 
     D : int
@@ -91,11 +105,6 @@ class RandomProjectionCompression( ProjectionAndLiftingOperators_Linear ):
 
     def get_lifted_coordinates_list(self, X_low: List[ np.array ] ) -> List[ np.array ]:
 
-        """
-        use when you have a list of low-dimn coordinates rather than an array
-        maps to a list of high-dimn coordinates
-        """
-        
         return list( self.get_lifted_coordinates( np.array(X_low).T ).T )
 
     # Private interface

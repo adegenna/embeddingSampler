@@ -16,6 +16,7 @@ class Domain:
         mu : domain distribution mean
         sigma : domain distribution length scale
         type_rho : pdf type
+            options are [ 'uniform' , 'gaussian' ]
     """
 
     dimn : int
@@ -51,6 +52,7 @@ class BoundedDomain:
         D_lower_bounds : list of lower bounds, each element is of size dimn
         D_upper_bounds : list of upper bounds, each element is of size dimn
         type_rho : pdf type
+            options are [ 'uniform' , 'gaussian' ]
         k_sigma : coefficient of length scale of distribution
     """
 
