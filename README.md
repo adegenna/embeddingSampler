@@ -23,3 +23,6 @@ pytest -o log_cli=true -rP
 ```sh
 python -c "import embsamp.examples.example_2to3d; embsamp.examples.example_2to3d.main()"
 ```
+
+![embedded_space](https://user-images.githubusercontent.com/2964258/131155586-dd6a70ad-edfb-428b-a4a7-e2973365cf38.png)
+![ambient_space](https://user-images.githubusercontent.com/2964258/131155601-57ed4dc2-2f94-41a7-ae8e-77a859690c19.png)
