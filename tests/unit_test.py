@@ -1,9 +1,9 @@
-from embeddingSamplers import EmbeddingSampler
-from functionDomain import BoundedDomain, Domain
 import numpy as np
 import unittest
 
-from projAndLifting import *
+from embsamp.src.embeddingSamplers import EmbeddingSampler
+from embsamp.src.functionDomain import BoundedDomain, Domain
+from embsamp.src.projAndLifting import *
 
 
 class Test_projAndLifting( unittest.TestCase ):

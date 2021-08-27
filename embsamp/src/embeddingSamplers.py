@@ -1,5 +1,5 @@
-from projAndLifting import ProjectionAndLiftingOperators
-from functionDomain import BoundedDomain, Domain
+from embsamp.src.projAndLifting import ProjectionAndLiftingOperators
+from embsamp.src.functionDomain import BoundedDomain, Domain
 from typing import Callable, List
 import numpy as np
 from abc import ABC , abstractmethod
